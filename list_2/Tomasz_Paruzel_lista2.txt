@@ -1,0 +1,11 @@
+9. 
+
+11. 
+
+14. SELECT nazwa FROM produkty
+    LEFT JOIN detal_zamow ON p_id = idp
+    WHERE sztuk IS NULL;
+
+15. SELECT nazwa FROM klienci LEFT JOIN zamow ON idk=k_id WHERE k_id IS NULL;
+ 
+
