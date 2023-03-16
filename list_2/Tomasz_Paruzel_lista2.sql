@@ -3,7 +3,7 @@
    LEFT JOIN detal_zamow ON z_id = idz WHERE p_id = 1
    ORDER BY REVERSE(nazwa) ASC;
 
-11.
+11. SELECT * FROM klienci NATURAL JOIN produkty;
 
 14. SELECT nazwa FROM produkty
     LEFT JOIN detal_zamow ON p_id = idp
