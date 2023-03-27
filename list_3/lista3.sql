@@ -7,6 +7,9 @@
    LEFT JOIN produkty ON idp=p_id
    LEFT JOIN zamow ON idz=z_id WHERE DAYOFWEEK(data)=6 GROUP BY p_id;
 
-14. 
+14. SELECT DATE(zamow.data) AS DATE, SUM(detal_zamow.sztuk * produkty.cena)
+    AS SUM_OF_ORDER FROM zamow
+    INNER JOIN detal_zamow ON zamow.idz = detal_zamow.z_id
+    INNER JOIN produkty ON detal_zamow.p_id = produkty.idp GROUP BY DATE;
 
 
