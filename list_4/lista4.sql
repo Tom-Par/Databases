@@ -19,4 +19,9 @@
 12. SELECT miasto,MIN(nazwa) AS nazwa, MAX(data) AS ostatnie_zamowienie
     FROM klienci_all GROUP BY miasto;
 
+18. SELECT DISTINCT nazwa_produktu, idp, COUNT(idp) AS suma_wystapien, SUM(sztuk) AS suma_sztuk
+    FROM produkty_all GROUP BY idp
+    HAVING SUM(sztuk) = (SELECT MAX(sum_sztuk)
+    FROM (SELECT SUM(sztuk) AS sum_sztuk
+      FROM produkty_all GROUP BY idp) AS sumy_sztuk);
 
