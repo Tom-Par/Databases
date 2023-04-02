@@ -12,5 +12,11 @@
   RIGHT JOIN detal_zamow ON idz=z_id
   RIGHT JOIN produkty ON p_id=idp;
 
+4. SELECT DISTINCT k1.nazwa FROM klienci_all k1
+   JOIN klienci_all k2 ON k1.cena>k2.cena
+   AND LOCATE('laptop', k2.nazwa_produktu)>0;
+
+12. SELECT miasto,MIN(nazwa) AS nazwa, MAX(data) AS ostatnie_zamowienie
+    FROM klienci_all GROUP BY miasto;
 
 
